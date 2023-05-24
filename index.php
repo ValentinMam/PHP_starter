@@ -270,6 +270,89 @@ $isAdult = ($userAge >= 18) ? true : false;
 $isAdult = ($userAge >= 18);
 ?>
 
+<h2>Les boucles</h2>
+
+<h3>Les tableaux</h3>
+
+<h4>Tableau simple</h4>
+<?php
+
+$user1 = ['Valentin Mam', 'email@valentin', 'S3cr3t', 27];
+
+// la première valeur du tableau = 0
+echo $user1[0]; // "Valentin Mam"
+echo $user1[1]; // "email@valentin"
+echo $user1[3]; // 27
+?>
+
+<h4>Tableau de tableaux</h4>
+
+<?php
+
+$mickael = ['Mickaël Andrieu', 'mickael.andrieu@exemple.com', 'S3cr3t', 34];
+$mathieu = ['Mathieu Nebra', 'mathieu.nebra@exemple.com', 'devine', 33];
+$laurene = ['Laurène Castor', 'laurene.castor@exemple.com', 'P4ssw0rD', 28];
+
+$users = [$mickael, $mathieu, $laurene];
+
+echo $users[1][1]; // "mathieu.nebra@exemple.com"
+echo $users[0][0]; // "Michaël Andrieu"
+?>
+
+<h3>La boucle simple : while</h3>
+
+
+<?php
+$lines = 1;
+// tant que $lines est inférieur ou égal à 10
+while ($lines <= 10) {
+    echo 'Je ne dois pas regarder les mouches voler quand j\'apprends le PHP.<br />';
+    $lines++; // $lines = $lines + 1
+}
+?>
+<br>
+<?php
+$lines = 1;
+
+while ($lines <= 5)
+{
+    echo 'Ceci est la ligne n°' . $lines . '<br />';
+    $lines++;
+}
+?>
+
+<!--
+
+Ceci est la ligne n°1
+Ceci est la ligne n°2
+...
+-->
+<br>
+<?php
+
+$lines = 3; // nombre d'utilisateurs dans le tableau
+$counter = 0;
+
+while ($counter < $lines) {
+    echo $users[$counter][0] . ' ' . $users[$counter][1] . '<br />';
+    $counter++; // Ne surtout pas oublier la condition de sortie !
+}
+?>
+
+<h3>La boucle complexe : for</h3>
+<?php
+for ($lines = 0; $lines <= 2; $lines++)
+{
+    echo $users[$lines][0] . ' ' . $users[$lines][1] . '<br />';
+}
+?>
+
+<br>
+<a href="recettes.php">
+voir le fichier recettes.php</a>
+
     </body>
 </html>
+
+
 

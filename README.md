@@ -3,3 +3,5 @@
 2. 1er script + info.php + config erreur php.ini
 
 3. Les conditions 
+
+4. Les boucles + recettes.php
