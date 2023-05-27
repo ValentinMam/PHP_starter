@@ -1,89 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Ma page web</title>
-    </head>
-    <body>
-        <!-- ceci est un commentaire -->
-        <h1>Ma page web</h1>
-        <h2>Introduction</h2>
-        <p>Aujourd'hui nous sommes le <?php echo date('d/m/Y h:i:s'); ?>.</p>
-        <?php
-        echo "J'habite en France."; // Cette ligne indique où j'habite 
-        // La ligne suivante indique mon âge
-        echo "J'ai 27 ans.";
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>PHP_Starter</title>
+</head>
+
+<body>
+    <!-- ceci est un commentaire -->
+    <h1>PHP STARTER</h1>
+    <h2>Introduction</h2>
+    <p>Aujourd'hui nous sommes le
+        <?php echo date('d/m/Y h:i:s'); ?>.</p>
+
+    <br>
+    <?php
+        echo "Vous voici sur PHP Starter.";
         ?>
+    <br>
+    <?php
+     
+        echo "N'hésitez pas à consulter le code de cette page (ctrl+u)."; 
+     ?>
 
-<h2>Accédez à des informations </h2>
-<p>consultez les infos en cliquant <a href="info.php">ici </a></p>
+    <h2>Accédez à des informations </h2>
+    <p>consultez les infos en cliquant <a href="info.php">ici </a></p>
 
+    <section>
+        <h2>Les variables</h2>
 
-<h2>Les variables</h2>
+        <!-- Une variable, c'est une petite information stockée en mémoire temporairement. -->
+        <!-- Elle a toujours un nom et une valeur -->
+        <!-- camelCase = isAuthor -->
+        <!-- On peut modifier la valeur d'une variable à tout moment -->
 
+        <h3>Les chaînes de caractères (string) </h3>
+        <!-- Texte -->
 
-<!-- string type -->
-<?php
+        <?php
 $fullname = "Valentin Mam";
 $email = 'valentin@exemple.com';
-echo 'Bonjour '  . $fullname . ' et bienvenue sur le site !'; // OK
-echo 'Voici votre email :' . $email; //OK
-?>
+echo "Bonjour $fullname et bienvenue sur le site ! , votre mail est  $email";  
 
- <br>
-<!-- int type  -->
-<?php
+?>
+        <br>
+        <h3>Les nombres entiers (int) </h3>
+        <!-- nombres du type 1, 2, 3, 4, -1, -2, -3… -->
+
+
+        <!-- resultat 1 -->
+        <?php
 $number = 2 + 4; // $number prend la valeur 6
 $number = 5 - 1; // $number prend la valeur 4
 $number = 3 * 5; // $number prend la valeur 15
 $number = 10 / 2; // $number prend la valeur 5
-
-// Allez on rajoute un peu de difficulté
 $number = 3 * 5 + 1; // $number prend la valeur 16
 $number = (1 + 2) * 2; // $number prend la valeur 6
 echo $number;
 ?>
-<br>
-<?php
+
+
+        <br>
+        <!-- resultat 2 -->
+        <?php
 $number = 10;
 $result = ($number + 5) * $number; // $result prend la valeur 150
 echo $result;
 ?>
 
-<br>
-<?php
+        <br>
+        <!-- resultat 3 -->
+        <?php
 $number = 10 % 5; // $number prend la valeur 0 car la division tombe juste
 $number = 10 % 3; // $number prend la valeur 1 car il reste 1
 echo $number;
 ?>
 
 
-<br>
-<!-- float type -->
-<?php
+        <br>
+        <h3>Les nombres décimaux (float ) </h3>
+        <!-- nombres à virgule -->
+
+
+        <?php
 $price = 57.3;
 echo $price;
 ?>
-<br>
-<!-- booleen type -->
-<?php
+        <br>
+
+        <h3>Les booléens (bool ) </h3>
+        <!-- vrai soit faux -->
+        <?php
 $isAuthor = true;
 $isAdministrator = false;
 echo $isAuthor;
 echo $isAdministrator;
 ?>
-<br>
-<!-- NULL type -->
-<?php
+        <br>
+
+        <h3>Rien (NULL)</h3>
+        <!-- l'absence de type -->
+
+        <?php
 $noValue = NULL;
 echo $noValue;
 ?>
 
+    </section>
 
-<h2>Les conditions</h2>
 
-<h3>Condition simples</h3>
-<?php
+
+    <section>
+        <h2>Les conditions</h2>
+
+
+        <h3>If else</h3>
+
+
+        <h4>Condition simples</h4>
+        <!-- résultat 1 -->
+        <?php
 $isEnabled = true;  // $isEnabled est un booléen
 
 // si $isEnabled est vrai, alors on affiche le message
@@ -95,8 +132,9 @@ else {
     echo "Accès refusé ❌ ";
 }
 ?>
- <br>
-<?php
+        <br>
+        <!-- résultat 2 -->
+        <?php
 $isAllowedToEnter = "Oui";
 
 // SI on a l'autorisation d'entrer
@@ -112,9 +150,9 @@ else {
     echo "Euh, je ne comprends pas ton choix, tu peux me le rappeler s'il te plaît ?";
 }
 ?>
-
-<br>
-<?php
+        <br>
+        <!-- résultat 3 -->
+        <?php
 $isAllowedToEnter = true;
 
 if ($isAllowedToEnter) {
@@ -125,8 +163,8 @@ else {
 }
 ?>
 
-<br> 
-<?php
+        <br>
+        <?php
 $isAllowedToEnter = true;
 
 // Si pas autorisé
@@ -136,9 +174,9 @@ if (! $isAllowedToEnter) {
 ?>
 
 
-<h3>Conditions multiples</h3>
+        <h4>Conditions multiples</h4>
 
-<?php
+        <?php
 $isEnabled = true;
 $isOwner = false;
 
@@ -150,8 +188,8 @@ if ($isEnabled && $isOwner) {
 }
 ?>
 
-<br>
-<?php
+        <br>
+        <?php
 $isEnabled = true;
 $isOwner = false;
 $isAdmin = true;
@@ -165,10 +203,10 @@ if (($isEnabled && $isOwner) || $isAdmin) {
 ?>
 
 
-<h3>Conditions switch</h3>
+        <h3>Conditions switch</h3>
 
-<h4>Sans switch</h4>
-<?php
+        <h4>Sans switch</h4>
+        <?php
 $grade = 16;
 
 if ($grade == 0) {
@@ -203,9 +241,9 @@ else {
     echo "Désolé, je n'ai pas de message à afficher pour cette note";
 }
 ?>
-<h4>Avec switch</h4>
+        <h4>Avec switch</h4>
 
-<?php
+        <?php
 $grade = 10;
 
 // on indique sur quelle variable on travaille
@@ -243,9 +281,9 @@ switch ($grade)
         echo "Désolé, je n'ai pas de message à afficher pour cette note";
 }
 ?>
-<h3>Conditions condensées</h3>
-<h4>Sans structure ternaire</h4>
-<?php
+        <h3>Conditions condensées</h3>
+        <h4>Sans structure ternaire</h4>
+        <?php
 $userAge = 24;
 
 if ($userAge >= 18) {
@@ -259,9 +297,9 @@ else {
 ?>
 
 
-<h4>Avec structure ternaire</h4>
+        <h4>Avec structure ternaire</h4>
 
-<?php
+        <?php
 $userAge = 24;
 
 $isAdult = ($userAge >= 18) ? true : false;
@@ -269,13 +307,16 @@ $isAdult = ($userAge >= 18) ? true : false;
 // Ou mieux, dans ce cas précis
 $isAdult = ($userAge >= 18);
 ?>
+    </section>
 
-<h2>Les boucles</h2>
 
-<h3>Les tableaux</h3>
+    <section>
+        <h2>Les boucles</h2>
 
-<h4>Tableau simple</h4>
-<?php
+        <h3>Les tableaux</h3>
+
+        <h4>Tableau simple</h4>
+        <?php
 
 $user1 = ['Valentin Mam', 'email@valentin', 'S3cr3t', 27];
 
@@ -285,9 +326,9 @@ echo $user1[1]; // "email@valentin"
 echo $user1[3]; // 27
 ?>
 
-<h4>Tableau de tableaux</h4>
+        <h4>Tableau de tableaux</h4>
 
-<?php
+        <?php
 
 $mickael = ['Mickaël Andrieu', 'mickael.andrieu@exemple.com', 'S3cr3t', 34];
 $mathieu = ['Mathieu Nebra', 'mathieu.nebra@exemple.com', 'devine', 33];
@@ -299,10 +340,10 @@ echo $users[1][1]; // "mathieu.nebra@exemple.com"
 echo $users[0][0]; // "Michaël Andrieu"
 ?>
 
-<h3>La boucle simple : while</h3>
+        <h3>La boucle simple : while</h3>
 
 
-<?php
+        <?php
 $lines = 1;
 // tant que $lines est inférieur ou égal à 10
 while ($lines <= 10) {
@@ -310,8 +351,8 @@ while ($lines <= 10) {
     $lines++; // $lines = $lines + 1
 }
 ?>
-<br>
-<?php
+        <br>
+        <?php
 $lines = 1;
 
 while ($lines <= 5)
@@ -321,14 +362,14 @@ while ($lines <= 5)
 }
 ?>
 
-<!--
+        <!--
 
 Ceci est la ligne n°1
 Ceci est la ligne n°2
 ...
 -->
-<br>
-<?php
+        <br>
+        <?php
 
 $lines = 3; // nombre d'utilisateurs dans le tableau
 $counter = 0;
@@ -339,20 +380,305 @@ while ($counter < $lines) {
 }
 ?>
 
-<h3>La boucle complexe : for</h3>
-<?php
+        <h3>La boucle complexe : for</h3>
+        <?php
 for ($lines = 0; $lines <= 2; $lines++)
 {
     echo $users[$lines][0] . ' ' . $users[$lines][1] . '<br />';
 }
 ?>
 
-<br>
-<a href="recettes.php">
-voir le fichier recettes.php</a>
+        <br>
+        <h3>Affichage des recettes</h3>
+        <a href="recettes.php">
+            voir le fichier recettes.php</a>
+    </section>
 
-    </body>
+    <section>
+        <h2>Les tableaux</h2>
+
+
+
+        <h3>Les tableaux numérotés</h3>
+
+        <!-- clé (n°) / valeur -->
+        <!-- commence TOUJOURS par 0 -->
+
+        <h4>Constuire</h4>
+
+        <?php
+
+$recipes = ['Cassoulet', 'Couscous', 'Escalope Milanaise', 'Salade César',];
+
+// La fonction array permet aussi de créer un array
+$recipes = array('Cassoulet', 'Couscous', 'Escalope Milanaise');
+?>
+
+
+        <!-- case par case -->
+        <?php
+$recipes[0] = 'Cassoulet';
+$recipes[1] = 'Couscous';
+$recipes[2] = 'Escalope Milanaise';
+?>
+
+        <!-- ou automatique -->
+        <?php
+$recipes[] = 'Cassoulet'; // Créera $recipes[0]
+$recipes[] = 'Couscous'; // Créera $recipes[1]
+$recipes[] = 'Escalope Milanaise'; // Créera $recipes[2]
+?>
+
+        <h4>Afficher</h4>
+        <?php
+echo "$recipes[1] ou $recipes[0]"; // Cela affichera : Couscous ou cassoulet
+?>
+
+
+        <h3>Les tableaux associatifs</h3>
+
+        <!-- plusieurs clés / valeurs : plusieurs propriétés -->
+        <h4>Constuire</h4>
+
+        <?php
+// Une bien meilleure façon de stocker une recette !
+$recipe = [
+    'title' => 'Cassoulet',
+    'recipe' => 'Etape 1 : des flageolets, Etape 2 : ...',
+    'author' => 'john.doe@exemple.com',
+    'enabled' => true,
+];
+
+?>
+
+        <!-- case par case  -->
+        <?php
+$recipe['title'] = 'Cassoulet';
+$recipe['recipe'] = 'Etape 1 : des flageolets, Etape 2 : ...';
+$recipe['author'] = 'john.doe@exemple.com';
+$recipe['enable'] = true;
+?>
+
+
+        <h4>Afficher</h4>
+        <?php
+echo "$recipe[title] par $recipe[author]";
+?>
+        <br>
+        <?php
+echo $recipe['title'];
+?>
+
+
+
+        <h3>Parcourir un tableau</h3>
+
+        <h4>Boucle for</h4>
+        <?php
+
+/**
+ * Déclaration du tableau des recettes
+ * Chaque élément du tableau est un tableau numéroté (une recette)
+ */
+$recipes = [
+    ['Cassoulet','[...]','mickael.andrieu@exemple.com',true,],
+    ['Couscous','[...]','mickael.andrieu@exemple.com',false,],
+];
+
+for ($lines = 0; $lines <= 1; $lines++) {
+    echo $recipes[$lines][0];
+}
+?>
+
+
+
+        <h4>Boucle foreach</h4>
+
+        <?php
+
+// Déclaration du tableau des recettes
+$recipes = [
+    ['Cassoulet','[...]','mickael.andrieu@exemple.com',true,],
+    ['Couscous','[...]','mickael.andrieu@exemple.com',false,],
+];
+
+foreach ($recipes as $recipe) {
+    echo $recipe[0]; // Affichera Cassoulet, puis Couscous
+}
+?>
+        <br>
+        <!-- avec les tableaux associatifs également -->
+        <?php
+$recipe = [
+    'title' => 'Cassoulet',
+    'recipe' => 'Etape 1 : des flageolets, Etape 2 : ...',
+    'author' => 'mickael.andrieu@exemple.com',
+    'enabled' => true,
+];
+
+foreach ($recipe as $value) {
+    echo $value;
+}
+
+/**
+ * AFFICHE
+ * CassouletEtape 1 : des flageolets, Etape 2 : ...mickael.andrieu@exemple.com1
+ */
+?>
+        <br>
+        <!-- tableau de tableaux -->
+        <?php
+
+$recipes = [
+    [
+        'title' => 'Cassoulet',
+        'recipe' => '',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => true,
+    ],
+    [
+        'title' => 'Couscous',
+        'recipe' => '',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => false,
+    ],
+    [
+        'title' => 'Escalope milanaise',
+        'recipe' => '',
+        'author' => 'mathieu.nebra@exemple.com',
+        'is_enabled' => true,
+    ],
+    [
+        'title' => 'Salade Romaine',
+        'recipe' => '',
+        'author' => 'laurene.castor@exemple.com',
+        'is_enabled' => false,
+    ],
+];
+
+foreach($recipes as $recipe) {
+    echo $recipe['title'] . ' contribué(e) par : ' . $recipe['author'] . PHP_EOL; 
+}
+?>
+
+        <!-- avec la boucle foreach -->
+        <?php
+$recipe = [
+    'title' => 'Salade Romaine',
+    'recipe' => 'Etape 1 : Lavez la salade ; Etape 2 : euh ...',
+    'author' => 'laurene.castor@exemple.com',
+];
+
+foreach($recipe as $property => $propertyValue)
+{
+    echo '[' . $property . '] vaut ' . $propertyValue . PHP_EOL;
+}
+?>
+        <h4>Afficher avec print r</h4>
+
+        <!-- echo spécialisé pour les tableaux -->
+
+        <?php
+
+$recipes = [
+    [
+        'title' => 'Cassoulet',
+        'recipe' => 'Step 1 : blabla, Step 2 : ...',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => true,  //true = 1
+    ],
+    [
+        'title' => 'Couscous',
+        'recipe' => '',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => false, //false = 0
+    ],
+];
+
+echo '<pre>';
+print_r($recipes);
+echo '</pre>';
+?>
+        <h3>Rechercher dans un tableau</h3>
+
+        <!-- vérifier si une clé existe dans le tableau -->
+        <h4>array_key_exists</h4>
+
+        <!-- Retourne true si la clé existe, false si non -->
+
+        <?php
+$recipe = [
+    'title' => 'Salade Romaine',
+    'recipe' => 'Etape 1 : Lavez la salade ; Etape 2 : euh ...',
+    'author' => 'laurene.castor@exemple.com',
+];
+
+if (array_key_exists('title', $recipe))
+{
+    echo 'La clé "title" se trouve dans la recette !';
+}
+
+if (array_key_exists('author', $recipe))
+{
+    echo 'La clé "auteur" se trouve dans la recette !';
+}
+
+if (array_key_exists('commentaires', $recipe))
+{
+    echo 'La clé "commentaires" se trouve dans la recette !';
+}
+?>
+
+        <!-- On ne trouvera que « title », et pas « commentaires » car pas dans le tableau -->
+
+
+        <!-- vérifier si une valeur existe dans le tableau -->
+        <h4>in_array</h4>
+        <?php
+$users = [
+    'Mathieu Nebra',
+    'Mickaël Andrieu',
+    'Laurène Castor',
+];
+
+if (in_array('Mathieu Nebra', $users))
+{
+    echo 'Mathieu fait bien partie des utilisateurs enregistrés !';
+}
+
+if (in_array('Arlette Chabot', $users))
+{
+    echo 'Arlette fait bien partie des utilisateurs enregistrés !';
+}
+?>
+        <!-- On ne trouvera que "Mathieu", et pas "Arlette" car pas dans le tableau -->
+
+        <!-- récupérer la clé d'une valeur dans le tableau -->
+
+        <h4>array_search</h4>
+
+        <!-- Retourne la clé (n°) si la valeur existe, false si non -->
+        <?php
+$users = [
+    'Mathieu Nebra',
+    'Mickaël Andrieu',
+    'Laurène Castor',
+];
+
+$positionMathieu = array_search('Mathieu Nebra', $users);
+echo '"Mathieu" se trouve en position ' . $positionMathieu . PHP_EOL;
+
+$positionLaurène = array_search('Laurène Castor', $users);
+echo '"Laurène" se trouve en position ' . $positionLaurène . PHP_EOL;
+?>
+
+        <h3>Affichage des recettes v2</h3>
+        <a href="recettes.php">
+            voir le fichier recettes.php</a>
+    </section>
+
+
+
+</body>
+
 </html>
-
-
-
