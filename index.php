@@ -26,6 +26,7 @@
 
     <h2>Accédez à des informations </h2>
     <p>consultez les infos en cliquant <a href="info.php">ici </a></p>
+    <p>utiliser la documentation de <a href="https://www.php.net/manual/fr/ ">PHP</a></p>
 
     <section>
         <h2>Les variables</h2>
@@ -676,7 +677,161 @@ echo '"Laurène" se trouve en position ' . $positionLaurène . PHP_EOL;
         <a href="recettes.php">
             voir le fichier recettes.php</a>
     </section>
+    <section>
 
+
+        <h2>Les fonctions</h2>
+        <!-- série d'instructions qui effectue des actions  -->
+        <!-- permet de réutiliser du code -->
+
+        <h3>Fonctions php</h3>
+        <a href="https://www.php.net/manual/fr/funcref.php">fonctions php par catégories </a>
+
+        <br>
+        <?php    
+// Génère : You should eat pizza, beer, and ice cream every day
+$phrase  = "You should eat fruits, vegetables, and fiber every day.";
+$healthy = array("fruits", "vegetables", "fiber");
+$yummy   = array("pizza", "beer", "ice cream");
+
+$newphrase = str_replace($healthy, $yummy, $phrase);
+echo $newphrase;
+?>
+        <h3>Manipuler du texte</h3>
+
+        <h4>strlen</h4>
+        <?php
+$recipe = 'Etape 1 : des flageolets ! Etape 2 : de la saucisse toulousaine';
+$length = strlen($recipe);
+ 
+ 
+echo 'La phrase ci-dessous comporte ' . $length . ' caractères :' . PHP_EOL . $recipe;
+?>
+        <h4>str_replace</h4>
+        <?php
+echo str_replace('c', 'P', 'le cassoulet, c\'est très bon');
+?>
+        <h4>sprintf</h4>
+
+        <?php
+$recipe = [
+    'title' => 'Salade Romaine',
+    'recipe' => 'Etape 1 : Lavez la salade ; Etape 2 : euh ...',
+    'author' => 'laurene.castor@exemple.com',
+];
+
+echo sprintf(
+    '%s par "%s" : %s',
+    $recipe['title'],
+    $recipe['author'],
+    $recipe['recipe']
+);
+?>
+        <h4>date</h4>
+
+        <?php
+// Enregistrons les informations de date dans des variables
+
+$day = date('d');
+$month = date('m');
+$year = date('Y');
+
+$hour = date('H');
+$minut = date('i');
+
+// Maintenant on peut afficher ce qu'on a recueilli
+echo 'Bonjour ! Nous sommes le ' . $day . '/' . $month . '/' . $year . ' et il est ' . $hour. ' h ' . $minut;
+?>
+        <h3>Créer une fonction</h3>
+
+
+        <!-- vérifiez la validité d'une recette  -->
+        <!-- récupérez les recettes "valides" -->
+        <!-- affichez le nom de l'auteur -->
+        <?php
+
+$users = [
+    [
+        'full_name' => 'Mickaël Andrieu',
+        'email' => 'mickael.andrieu@exemple.com',
+        'age' => 34,
+    ],
+    [
+        'full_name' => 'Mathieu Nebra',
+        'email' => 'mathieu.nebra@exemple.com',
+        'age' => 34,
+    ],
+    [
+        'full_name' => 'Laurène Castor',
+        'email' => 'laurene.castor@exemple.com',
+        'age' => 28,
+    ],
+];
+
+$recipes = [
+    [
+        'title' => 'Cassoulet',
+        'recipe' => '',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => true,
+    ],
+    [
+        'title' => 'Couscous',
+        'recipe' => '',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => false,
+    ],
+    [
+        'title' => 'Escalope milanaise',
+        'recipe' => '',
+        'author' => 'mathieu.nebra@exemple.com',
+        'is_enabled' => true,
+    ],
+    [
+        'title' => 'Salade Romaine',
+        'recipe' => '',
+        'author' => 'laurene.castor@exemple.com',
+        'is_enabled' => false,
+    ],
+];
+
+function displayAuthor(string $authorEmail, array $users) : string
+{
+    for ($i = 0; $i < count($users); $i++) {
+        $author = $users[$i];
+        if ($authorEmail === $author['email']) {
+            return $author['full_name'] . '(' . $author['age'] . ' ans)';
+        }
+    }
+}
+
+function isValidRecipe(array $recipe) : bool
+{
+    if (array_key_exists('is_enabled', $recipe)) {
+        $isEnabled = $recipe['is_enabled'];
+    } else {
+        $isEnabled = false;
+    }
+
+    return $isEnabled;
+}
+
+function getRecipes(array $recipes) : array
+{
+    $valid_recipes = [];
+
+    foreach($recipes as $recipe) {
+        if (isValidRecipe($recipe)) {
+            $valid_recipes[] = $recipe;
+        }
+    }
+
+    return $valid_recipes;
+}
+
+?>
+
+    </section>
 
 
 </body>

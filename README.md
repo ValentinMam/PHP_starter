@@ -8,7 +8,7 @@
 
 5. Les tableaux 
 
-
+6. Les fonctions 
 
 
 # PHP - VSCode
