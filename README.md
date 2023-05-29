@@ -12,6 +12,9 @@
 
 7. Les erreurs + debug.php
 
+8. docs from index.php to starter.php + header.php + footer.php + variables.php + functions.php + contact.php
+
+
 # PHP - VSCode
 Télécharger PHP Intelephense + Format HTML in PHP
 PHP suggest basics : NO (dans les paramètres de VSCode)
