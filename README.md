@@ -14,6 +14,7 @@
 
 8. docs from index.php to starter.php + header.php + footer.php + variables.php + functions.php + contact.php
 
+9. URL et contact + submit_contact.php
 
 # PHP - VSCode
 Télécharger PHP Intelephense + Format HTML in PHP

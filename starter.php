@@ -880,7 +880,13 @@ function getRecipes(array $recipes) : array
             </a>
         </p>
     </section>
+    <section>
+        <h2>URL et reqête utilisateur</h2>
+        <h3>Envoyer des paramètres dans l'URL</h3>
+        <h3>Récuperer les paramètres en PHP</h3>
+        <h3>Ne pas faire confiance aux données reçues</h3>
 
+    </section>
 
 
 </body>
