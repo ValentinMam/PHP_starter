@@ -10,6 +10,7 @@
 
 6. Les fonctions 
 
+7. Les erreurs + debug.php
 
 # PHP - VSCode
 Télécharger PHP Intelephense + Format HTML in PHP

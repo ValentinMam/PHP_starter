@@ -832,6 +832,47 @@ function getRecipes(array $recipes) : array
 ?>
 
     </section>
+    <section>
+        <h2>Les erreurs</h2>
+        <h3>Les erreurs courantes </h3>
+
+
+        <!-- si vous formulez mal une instruction / mauvaise synthaxe-->
+        <h4>Parse error</h4>
+        <p>Parse error: syntax error in error.php on line 7</p>
+
+        <!-- si vous utilisez une fonction non reconnue -->
+        <h4>Undefined function</h4>
+        <!-- la fonction n'existe pas OU se trouve dans une extension non activée  -->
+        <p>Fatal Error: Call to undefined function: is_valid_recipe() in fichier.php on line 27</p>
+
+        <!-- si vous entrez un nombre incorrect de paramètres pour une fonction -->
+        <h4>Wrong parameter count</h4>
+        <!-- oublie de paramètres OU trop de paramètres -->
+        <p>Warning: Wrong parameter count for fonction() in fichier.php on line 112</p>
+
+        <h3>Les erreurs plus rares</h3>
+        <!-- Près de 4000 erreurs -->
+
+        <!-- si vous écrivez du code au mauvais endroit -->
+        <h4>Headers already sent by</h4>
+        <!-- header() , session_start() , setcookie() AVANT balise html  -->
+        <p>Cannot modify header information - headers already sent by ...</p>
+
+        <!-- si vous avez fait une erreur d'utilisation de la librairie GD -->
+        <h4>L'image contient des erreurs</h4>
+        <p><a href="https://www.php.net/manual/fr/image.examples.php"> bibliothèque GD</a></p>
+        <!-- si vous avez fait une boucle infinie -->
+        <h4>Maximum execution time exceeded</h4>
+
+        <!-- limite à 30 secondes maximum -->
+        <p>Fatal error: Maximum execution time exceeded in fichier.php on line 57</p>
+        <h3>Déboguez son premier script</h3>
+        <a href="debug.php"> fichier debug.php</a>
+
+    </section>
+
+
 
 
 </body>
