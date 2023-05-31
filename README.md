@@ -16,6 +16,8 @@
 
 9. URL et contact + submit_contact.php
 
+10. Base de données  
+
 # PHP - VSCode
 Télécharger PHP Intelephense + Format HTML in PHP
 PHP suggest basics : NO (dans les paramètres de VSCode)
